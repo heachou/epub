@@ -111,7 +111,7 @@ function App() {
                   className="underline hover:no-underline text-sm mx-1"
                   onClick={() => {
                     rendition.current?.annotations.remove(cfiRange, 'highlight')
-                    setSelections(selections.filter((item, j) => j !== i))
+                    setSelections(selections.filter((_, j) => j !== i))
                   }}
                 >
                   Remove
@@ -132,7 +132,7 @@ function App() {
           flow: 'scrolled',
           manager: 'continuous',
         }}
-        
+
         locationChanged={(epubcfi: string) => {
           setLocation(epubcfi)
           if (rendition.current && toc.current) {
